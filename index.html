@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Paul Williams : Tenable - Nessus UI Assessment</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!--[if gte IE 9]>
+            <style type="text/css">
+                .gradient {
+                    filter: none;
+                }
+            </style>
+        <![endif]-->
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>Tenable - Nessus UI Assessment</h1>
+                <h2>Paul Williams</h2>
+            </div>
+        </header>
+        <div class="container">
+            <ol class="breadcrumb">
+              <li><a href="#">Home</a></li>
+              <li class="active">Configurations</li>
+            </ol>
+            <div class="span-1third">
+                <div class="data-label">
+                    <div class="data-label-heading">
+                        <h3 class="data-label-title">
+                            Configurations
+                        </h3><!-- // data-label-title -->
+                    </div><!-- // data-label-heading -->
+                    <div class="data-label-content">
+                        Active configurations displaying port and hostname are lorem ipsum dolor sit amet. Consectetur dolor lorem amet.
+                    </div><!-- // data-label-content-->
+                    <div class="data-label-content">
+                        <form class="configs">
+                            <label for="numberOfConfigs">Number of configurations to load</label>
+                            <input type="number" min="2" value="2" step="10" class="numberOfConfigs" id="numberOfConfigs">
+                            <button class="btn btn-default load-configs">Load Configs</button>
+                        </form>
+                        <img src="images/ajax-loader.gif" class="loading" alt="loading" />
+                        <div class="clearfix"></div>
+                    </div><!-- // data-label-content -->
+                    <div class="data-label-content" id="lots-of-records">
+                        When requesting this many records I would recommend a way to request pages, in something like blocks of 100. <br />
+                        An example:
+                        <pre>http://[yourserver]/download/request?host=100&page=4</pre>
+                        would actually get records 300 - 399. Pagination could then be implemented, and the page wouldn't have to wait for the return from the ajax call.
+                    </div><!-- // data-label-content -->
+                </div>
+            </div><!-- // span-quarter -->
+            <div class="span-2third">
+                <!-- IE < 10 does not like giving a tbody a height.  The workaround here applies the scrolling to a wrapped <div>. -->
+                <!--[if lte IE 9]>
+                <div class="old_ie_wrapper">
+                <!--<![endif]-->
+                    <table class="data">
+                      <thead class="gradient1">
+                        <tr>
+                          <th>Name</th>
+                          <th>Hostname</th>
+                          <th>Port</th>
+                          <th>Username</th>
+                        </tr>
+                      </thead>
+                      <tbody id="configurations">
+                      </tbody>
+                    </table>
+                <!--[if lte IE 9]>
+                </div>
+                <!--<![endif]-->
+            </div><!-- // span-3quarter -->
+        </div><!-- // container -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/vendor/underscore-min.js"></script>
+        <script src="js/vendor/backbone-min.js"></script>
+        <script src="js/main.js"></script>
+        <script id="config-template" type="text/template"> 
+            <tr>
+                <td><%= name %></td>
+                <td><%= hostname %></td>
+                <td><%= port %></td>
+                <td><%= username %></td>
+            </tr>
+        </script>​
+    </body>
+</html>
